@@ -1,3 +1,3 @@
-module github.com/AnimalMother83/go_ballisticcalc
+module externalballistics
 
 go 1.18

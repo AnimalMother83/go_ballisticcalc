@@ -3,8 +3,8 @@ package externalballistics
 import (
 	"math"
 
-	"github.com/AnimalMother83/go_ballisticcalc/bmath/unit"
-	"github.com/AnimalMother83/go_ballisticcalc/bmath/vector"
+	"main/bmath/unit"
+	"main/bmath/vector"
 )
 
 const cZeroFindingAccuracy float64 = 0.000005

@@ -1,6 +1,6 @@
 package externalballistics
 
-import "github.com/AnimalMother83/go_ballisticcalc/bmath/unit"
+import "main/bmath/unit"
 
 // WindInfo structure keeps information about wind
 type WindInfo struct {

@@ -1,6 +1,6 @@
 package externalballistics
 
-import "github.com/AnimalMother83/go_ballisticcalc/bmath/unit"
+import "main/bmath/unit"
 
 // ZeroInfo structure keeps the information about zeroing of the weapon
 type ZeroInfo struct {

@@ -3,8 +3,8 @@ package externalballistics
 import (
 	"fmt"
 	"math"
+	"main/bmath/unit"
 
-	"github.com/AnimalMother83/go_ballisticcalc/bmath/unit"
 )
 
 const cIcaoStandardTemperatureR float64 = 518.67

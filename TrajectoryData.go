@@ -3,7 +3,7 @@ package externalballistics
 import (
 	"math"
 
-	"github.com/AnimalMother83/go_ballisticcalc/bmath/unit"
+	"main/bmath/unit"
 )
 
 // Timespan keeps the amount of time spent

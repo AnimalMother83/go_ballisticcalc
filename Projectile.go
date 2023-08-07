@@ -2,8 +2,8 @@ package externalballistics
 
 import (
 	"math"
-
-	"github.com/AnimalMother83/go_ballisticcalc/bmath/unit"
+	"main/bmath/unit"
+	
 )
 
 // Projectile keeps description of a projectile

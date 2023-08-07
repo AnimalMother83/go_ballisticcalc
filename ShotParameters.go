@@ -1,6 +1,6 @@
 package externalballistics
 
-import "github.com/AnimalMother83/go_ballisticcalc/bmath/unit"
+import "main/bmath/unit"
 
 // ShotParameters struct keeps parameters of the shot to be calculated
 type ShotParameters struct {
