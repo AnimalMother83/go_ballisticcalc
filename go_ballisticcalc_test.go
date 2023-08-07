@@ -4,8 +4,8 @@ import (
 	"math"
 	"testing"
 
-	externalballistics "github.com/AnimalMother83/go_ballisticcalc"
-	"github.com/AnimalMother83/go_ballisticcalc/bmath/unit"
+	"externalballistics"
+	"unit"
 )
 
 func TestZero1(t *testing.T) {

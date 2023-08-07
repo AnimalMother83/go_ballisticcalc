@@ -1,6 +1,6 @@
 package externalballistics
 
-import "main/bmath/unit"
+import "unit"
 
 // WindInfo structure keeps information about wind
 type WindInfo struct {

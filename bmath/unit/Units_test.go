@@ -4,7 +4,7 @@ import (
 	"math"
 	"testing"
 
-	"main/bmath/unit"
+	"unit"
 )
 
 func angularBackAndForth(t *testing.T, value float64, units byte) {

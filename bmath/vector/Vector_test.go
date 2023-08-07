@@ -4,7 +4,7 @@ import (
 	"math"
 	"testing"
 
-	"main/bmath/vector"
+	"vector"
 )
 
 func TestVectorCreation(t *testing.T) {
