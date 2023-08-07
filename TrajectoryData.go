@@ -3,7 +3,7 @@ package externalballistics
 import (
 	"math"
 
-	"unit"
+	"externalballistics/bmath/unit"
 )
 
 // Timespan keeps the amount of time spent

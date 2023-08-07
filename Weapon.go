@@ -1,6 +1,6 @@
 package externalballistics
 
-import "unit"
+import "externalballistics/bmath/unit"
 
 // ZeroInfo structure keeps the information about zeroing of the weapon
 type ZeroInfo struct {

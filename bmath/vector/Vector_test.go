@@ -4,7 +4,7 @@ import (
 	"math"
 	"testing"
 
-	"vector"
+	"externalballistics/bmath/vector"
 )
 
 func TestVectorCreation(t *testing.T) {

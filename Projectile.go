@@ -2,7 +2,7 @@ package externalballistics
 
 import (
 	"math"
-	"unit"
+	"externalballistics/bmath/unit"
 	
 )
 

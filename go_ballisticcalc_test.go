@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"externalballistics"
-	"unit"
+	"externalballistics/bmath/unit"
 )
 
 func TestZero1(t *testing.T) {

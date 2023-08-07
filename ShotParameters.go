@@ -1,6 +1,6 @@
 package externalballistics
 
-import "unit"
+import "externalballistics/bmath/unit"
 
 // ShotParameters struct keeps parameters of the shot to be calculated
 type ShotParameters struct {

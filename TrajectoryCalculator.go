@@ -3,8 +3,8 @@ package externalballistics
 import (
 	"math"
 
-	"unit"
-	"vector"
+	"externalballistics/bmath/unit"
+	"externalballistics/bmath/vector"
 )
 
 const cZeroFindingAccuracy float64 = 0.000005
