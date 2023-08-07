@@ -4,7 +4,7 @@ import (
 	"math"
 	"testing"
 
-	externalballistics "github.com/gehtsoft-usa/go_ballisticcalc"
+	externalballistics "github.com/AnimalMother83/go_ballisticcalc"
 	"github.com/gehtsoft-usa/go_ballisticcalc/bmath/unit"
 )
 

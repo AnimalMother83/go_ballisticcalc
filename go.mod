@@ -1,3 +1,3 @@
-module github.com/gehtsoft-usa/go_ballisticcalc
+module github.com/AnimalMother83/go_ballisticcalc
 
 go 1.12
