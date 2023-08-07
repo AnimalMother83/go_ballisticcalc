@@ -4,7 +4,7 @@ import (
 	"math"
 	"testing"
 
-	"github.com/gehtsoft-usa/go_ballisticcalc/bmath/vector"
+	"github.com/AnimalMother83/go_ballisticcalc/bmath/vector"
 )
 
 func TestVectorCreation(t *testing.T) {

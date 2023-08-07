@@ -4,7 +4,7 @@ import (
 	"math"
 	"testing"
 
-	"github.com/gehtsoft-usa/go_ballisticcalc/bmath/unit"
+	"github.com/AnimalMother83/go_ballisticcalc/bmath/unit"
 )
 
 func angularBackAndForth(t *testing.T, value float64, units byte) {

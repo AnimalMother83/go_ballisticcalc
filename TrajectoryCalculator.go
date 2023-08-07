@@ -3,8 +3,8 @@ package externalballistics
 import (
 	"math"
 
-	"github.com/gehtsoft-usa/go_ballisticcalc/bmath/unit"
-	"github.com/gehtsoft-usa/go_ballisticcalc/bmath/vector"
+	"github.com/AnimalMother83/go_ballisticcalc/bmath/unit"
+	"github.com/AnimalMother83/go_ballisticcalc/bmath/vector"
 )
 
 const cZeroFindingAccuracy float64 = 0.000005
@@ -13,22 +13,22 @@ const cMaximumDrop float64 = -15000
 const cMaxIterations int = 10
 const cGravityConstant float64 = -32.17405
 
-//TrajectoryCalculator table is used to calculate the trajectory of a projectile shot with the parameters specified
+// TrajectoryCalculator table is used to calculate the trajectory of a projectile shot with the parameters specified
 type TrajectoryCalculator struct {
 	maximumCalculatorStepSize unit.Distance
 }
 
-//MaximumCalculatorStepSize returns the maximum size of one calculation iteration.
+// MaximumCalculatorStepSize returns the maximum size of one calculation iteration.
 func (v TrajectoryCalculator) MaximumCalculatorStepSize() unit.Distance {
 	return v.maximumCalculatorStepSize
 }
 
-//SetMaximumCalculatorStepSize sets the maximum size of one calculation iteration.
+// SetMaximumCalculatorStepSize sets the maximum size of one calculation iteration.
 //
-//As the generic rule, the maximum step of the calculation must not be greater than
-//a half of the step used in the short parameter. The smaller value is, the calculation is more precise but
-//takes more time to calculate. From practical standpoint the value in range from 0.5 to 5 feet produces
-//good enough accuracy.
+// As the generic rule, the maximum step of the calculation must not be greater than
+// a half of the step used in the short parameter. The smaller value is, the calculation is more precise but
+// takes more time to calculate. From practical standpoint the value in range from 0.5 to 5 feet produces
+// good enough accuracy.
 func (v *TrajectoryCalculator) SetMaximumCalculatorStepSize(x unit.Distance) {
 	v.maximumCalculatorStepSize = x
 }
@@ -46,17 +46,17 @@ func (v TrajectoryCalculator) getCalculationStep(step float64) float64 {
 	return step
 }
 
-//CreateTrajectoryCalculator creates and instance of the trajectory calculator
+// CreateTrajectoryCalculator creates and instance of the trajectory calculator
 func CreateTrajectoryCalculator() TrajectoryCalculator {
 	return TrajectoryCalculator{
 		maximumCalculatorStepSize: unit.MustCreateDistance(1, unit.DistanceFoot),
 	}
 }
 
-//SightAngle calculates the sight angle for a rifle with scope height specified and zeroed using the ammo specified at
-//the range specified and under the conditions (atmosphere) specified.
+// SightAngle calculates the sight angle for a rifle with scope height specified and zeroed using the ammo specified at
+// the range specified and under the conditions (atmosphere) specified.
 //
-//The calculated value is to be used as sightAngle parameter of the ShotParameters structure
+// The calculated value is to be used as sightAngle parameter of the ShotParameters structure
 func (v TrajectoryCalculator) SightAngle(ammunition Ammunition, weapon Weapon, atmosphere Atmosphere) unit.Angular {
 	var calculationStep = v.getCalculationStep(unit.MustCreateDistance(10, weapon.Zero().ZeroDistance().Units()).In(unit.DistanceFoot))
 
@@ -115,7 +115,7 @@ func (v TrajectoryCalculator) SightAngle(ammunition Ammunition, weapon Weapon, a
 	return unit.MustCreateAngular(barrelElevation, unit.AngularRadian)
 }
 
-//Trajectory calculates the trajectory with the parameters specified
+// Trajectory calculates the trajectory with the parameters specified
 func (v TrajectoryCalculator) Trajectory(ammunition Ammunition, weapon Weapon, atmosphere Atmosphere, shotInfo ShotParameters, windInfo []WindInfo) []TrajectoryData {
 	var rangeTo = shotInfo.MaximumDistance().In(unit.DistanceFoot)
 	var step = shotInfo.Step().In(unit.DistanceFoot)
