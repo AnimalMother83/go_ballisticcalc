@@ -14,10 +14,10 @@ type ShotParameters struct {
 // CreateShotParameters creates parameters of the shot
 //
 // sightAngle - is the angle between scope centerline and the barrel centerline
-func CreateShotParameters(sightAngle unit.Angular, maxDistance unit.Distance, step unit.Distance) ShotParameters {
+func CreateShotParameters(sightAngle unit.Angular, shotAngle unit.Angular, maxDistance unit.Distance, step unit.Distance) ShotParameters {
 	return ShotParameters{
 		sightAngle:      sightAngle,
-		shotAngle:       unit.MustCreateAngular(0, unit.AngularRadian),
+		shotAngle:       shotAngle,
 		cantAngle:       unit.MustCreateAngular(0, unit.AngularRadian),
 		maximumDistance: maxDistance,
 		step:            step,
@@ -27,6 +27,11 @@ func CreateShotParameters(sightAngle unit.Angular, maxDistance unit.Distance, st
 // SightAngle returns the angle of the sight
 func (v ShotParameters) SightAngle() unit.Angular {
 	return v.sightAngle
+}
+
+// SetShotAngle sets the shot angle
+func (v *ShotParameters) SetShotAngle(angle unit.Angular) {
+    v.shotAngle = angle
 }
 
 // ShotAngle returns the angle of the short

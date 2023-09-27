@@ -87,7 +87,9 @@ func TestPathG1(t *testing.T) {
 	zero := externalballistics.CreateZeroInfo(unit.MustCreateDistance(100, unit.DistanceYard))
 	weapon := externalballistics.CreateWeapon(unit.MustCreateDistance(2, unit.DistanceInch), zero)
 	atmosphere := externalballistics.CreateDefaultAtmosphere()
-	shotInfo := externalballistics.CreateShotParameters(unit.MustCreateAngular(0.001228, unit.AngularRadian),
+	shotInfo := externalballistics.CreateShotParameters(
+		unit.MustCreateAngular(0.001228, unit.AngularRadian),
+		unit.MustCreateAngular(0, unit.AngularDegree),
 		unit.MustCreateDistance(1000, unit.DistanceYard),
 		unit.MustCreateDistance(100, unit.DistanceYard))
 	wind := externalballistics.CreateOnlyWindInfo(unit.MustCreateVelocity(5, unit.VelocityMPH),
@@ -114,6 +116,7 @@ func TestPathG7(t *testing.T) {
 	weapon := externalballistics.CreateWeaponWithTwist(unit.MustCreateDistance(2, unit.DistanceInch), zero, twist)
 	atmosphere := externalballistics.CreateDefaultAtmosphere()
 	shotInfo := externalballistics.CreateShotParameters(unit.MustCreateAngular(4.221, unit.AngularMOA),
+		unit.MustCreateAngular(0, unit.AngularDegree),
 		unit.MustCreateDistance(1000, unit.DistanceYard),
 		unit.MustCreateDistance(100, unit.DistanceYard))
 	wind := externalballistics.CreateOnlyWindInfo(unit.MustCreateVelocity(5, unit.VelocityMPH),
@@ -182,7 +185,12 @@ func TestCustomCurve(t *testing.T) {
 
 	var calc = externalballistics.CreateTrajectoryCalculator()
 	var sightAngle = calc.SightAngle(ammo, weapon, atmosphere)
-	var shotInfo = externalballistics.CreateShotParameters(sightAngle, unit.MustCreateDistance(1500, unit.DistanceMeter), unit.MustCreateDistance(100, unit.DistanceMeter))
+	var shotInfo = externalballistics.CreateShotParameters(
+		sightAngle,
+		unit.MustCreateAngular(0, unit.AngularDegree),
+		unit.MustCreateDistance(1500, unit.DistanceMeter),
+		unit.MustCreateDistance(100, unit.DistanceMeter),
+	)
 	var data = calc.Trajectory(ammo, weapon, atmosphere, shotInfo, nil)
 	validateOneMetric(t, data[1], 100, 0, 550, 0.182)
 	validateOneMetric(t, data[2], 200, -28.4, 544, 0.364)

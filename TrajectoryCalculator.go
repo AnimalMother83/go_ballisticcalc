@@ -140,8 +140,7 @@ func (v TrajectoryCalculator) Trajectory(ammunition Ammunition, weapon Weapon, a
 	var ranges = make([]TrajectoryData, rangesLength)
 
 	barrelAzimuth = 0.0
-	barrelElevation = shotInfo.SightAngle().In(unit.AngularRadian)
-	barrelElevation = barrelElevation + shotInfo.ShotAngle().In(unit.AngularRadian)
+	barrelElevation = shotInfo.SightAngle().In(unit.AngularRadian) + shotInfo.ShotAngle().In(unit.AngularRadian)
 	var alt0 = atmosphere.Altitude().In(unit.DistanceFoot)
 	var currentWind int
 	var nextWindRange = 1e7
